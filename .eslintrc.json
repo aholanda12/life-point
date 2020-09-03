@@ -31,7 +31,6 @@
     "no-var": "error",
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
-    "prettier/prettier": "error",
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "vars-on-top": "error",
