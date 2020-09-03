@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "passport_demo",
+    "database": "life_point",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -15,6 +15,41 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  },
+  "ashleysComputer": {
+    "username": "root",
+    "password": "Anderson[1256",
+    "database": "life_point",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "patricksComputer": {
+    "username": "root",
+    "password": "Ls3@1234",
+    "database": "life_point",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "cristhalComputer": {
+    "username": "root",
+    "password": "Belle!123",
+    "database": "life_point",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "mustafasComputer": {
+    "username": "root",
+    "password": "mustafadag1",
+    "database": "life_point",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "jackiesComputer": {
+    "username": "root",
+    "password": "TEST",
+    "database": "life_point",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
