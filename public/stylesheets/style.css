@@ -1,4 +1,31 @@
 form.signup,
 form.login {
   margin-top: 50px;
+};
+
+.Titles{
+  font-size: 50px;
+  text-decoration: underline;
+};
+
+.columns{
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  color: #5AB9EA
+};
+
+body{
+  color: #8860D0;
+}
+
+.image{
+  display:flex;
+  flex-direction: row;
+}
+
+.moodimg{
+  padding: 5px;
+  width: 35px;
+  height: 35px;
 }
