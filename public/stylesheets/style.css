@@ -16,8 +16,9 @@ form.login {
 };
 
 body{
+  background-image: url('../img/background.png');
+  height: 100%;
   color: #8860D0;
-    background-image: url('../img/background.png');
 }
 
 .image{
