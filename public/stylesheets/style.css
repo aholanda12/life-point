@@ -37,3 +37,10 @@ form.login {
   height: 200px;
   border-style: solid;
 }
+
+#resources{
+  background-color: aliceblue;
+  border-radius: 1cm;
+  border-style: solid;
+  font-family: 'Neucha', cursive;
+}
