@@ -37,3 +37,8 @@ form.login {
   height: 200px;
   border-style: solid;
 }
+
+#resources{
+  background-color: #c1aee4;
+  opacity: .75;
+}
