@@ -29,7 +29,6 @@
     "no-unreachable": "error",
     "no-unused-vars": "error",
     "no-var": "error",
-    "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
