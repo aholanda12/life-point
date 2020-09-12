@@ -39,6 +39,7 @@ form.login {
 }
 
 #resources{
-  background-color: #c1aee4;
-  opacity: .75;
+  background-color: aliceblue;
+  border-radius: 1cm;
+  border-style: solid;
 }
