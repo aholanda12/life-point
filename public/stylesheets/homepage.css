@@ -1,0 +1,48 @@
+body {
+    background-image: url('../img/Screen\ Shot\ 2020-09-12\ at\ 11.38.26\ AM.png') !important;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 61%;
+    background-position-y: 15rem;
+    background-position-x: center;
+   
+}
+
+header {
+    background-color: #49B1A7;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Neucha', cursive;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+#button-a {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-spacing: 4rem;
+    font-weight: bolder;
+}
+
+#button-b {
+    margin-top: 5rem;
+    padding: 2rem;
+    border-spacing: 4rem;
+    font-weight: bolder;    
+}
+
+#button-c {
+    margin-top: 5rem;
+    padding: 2rem;
+    border-spacing: 4rem;
+    font-weight: bolder; 
+}
+
+#lotus-button {
+    
+}
