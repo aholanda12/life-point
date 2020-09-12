@@ -1,4 +1,10 @@
-form.signup,
+body{
+  background-image: url('../img/background.png') !important;
+  background-size:cover;
+  color: #8860D0;
+}
+
+.signup,
 form.login {
   margin-top: 50px;
 };
@@ -15,11 +21,6 @@ form.login {
   color: #5AB9EA
 };
 
-body{
-  background-image: url('../img/background.png');
-  height: 100%;
-  color: #8860D0;
-}
 
 .image{
   display:flex;
