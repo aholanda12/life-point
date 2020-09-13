@@ -3,6 +3,7 @@ $(document).ready(() => {
   const loginForm = $("form.login");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
+  
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", event => {
@@ -29,7 +30,7 @@ $(document).ready(() => {
       password: password
     })
       .then(() => {
-        window.location.replace("/members");
+        window.location.replace("/entry");
         // If there's an error, log the error
       })
       .catch(err => {

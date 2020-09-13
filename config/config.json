@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Ls3@1234",
+    "password": null,
     "database": "life_point",
     "host": "127.0.0.1",
     "dialect": "mysql"
