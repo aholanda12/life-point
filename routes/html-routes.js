@@ -8,7 +8,7 @@ module.exports = function (app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
@@ -16,7 +16,7 @@ module.exports = function (app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/home");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -28,11 +28,11 @@ module.exports = function (app) {
   // });
 
   // This is to pass back the affirmation. db.whatever.
-  app.get("/members", isAuthenticated, (req, res) => {
+  app.get("/home", isAuthenticated, (req, res) => {
     const handlebarsObject = {
       userName: "Charlie",
     };
     console.log("in route get / ");
-    res.render("members", handlebarsObject);
+    res.render("home", handlebarsObject);
   });
 };
