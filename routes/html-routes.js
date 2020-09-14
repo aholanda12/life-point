@@ -42,7 +42,7 @@ module.exports = function (app) {
     //const handlebarsObject = { affirmData: "Hello" }
     //res.render("members", handlebarsObject);
     db.Affirmation.findAll().then(function (data) {
-       console.log(data[3].dataValues.quote);
+      console.log(data[3].dataValues.quote);
       // randomly pick one affirmation
       const rando = (Math.floor(Math.random() * 101) + 1);
       const handlebarsObject = {
@@ -62,14 +62,19 @@ module.exports = function (app) {
     console.log("historical");
     res.render("historical", handlebarsObject);
   });
+
+
+  app.get("/calendar", (req, res) => {
+    
+    const handlebarsObject = { calendar:"Hello" }
+    // console.log("calendar");
+    res.render("calendar", handlebarsObject);
+  });
+
+  app.get("/resources", (req, res) => {
+    const handlebarsObject = { resources:"Hello" }
+    // console.log("resources");
+    res.render("resources", handlebarsObject);
+  });
+
 };
-
-// app.get("/calendar", (req, res) => {
-//   console.log("calendar");
-//     res.render("calendar", handlebarsObject);
-// };
-
-// app.get("/resources", (req, res) => {
-//   console.log("resources");
-//     res.render("resources", handlebarsObject);
-// };
