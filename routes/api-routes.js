@@ -31,71 +31,128 @@ module.exports = function (app) {
   });
 
   // API call for posting a new journal entry
-  app.post("/api/entry", (req, res) => {
-    db.Journal.create({
-      entry: req.body.entry,
-      date: req.body.date
-    })
-      .then(() => {
-        res.redirect(307, "/api/home");
-      })
-      .catch(err => {
-        res.status(401).json(err);
+  // app.post("/api/entry", (req, res) => {
+  //   db.Journal.create({
+  //     entry: req.body.entry,
+  //     date: req.body.date
+  //   })
+  //     .then(() => {
+  //       res.redirect(307, "/api/home");
+  //     })
+  //     .catch(err => {
+  //       res.status(401).json(err);
+  //     });
+
+  //   db.Grateful.create({
+  //     one: req.body.one,
+  //     two: req.body.two,
+  //     three: req.body.three,
+  //     four: req.body.four,
+  //     five: req.body.five
+  //   })
+  //     .then(() => {
+  //       res.redirect(307, "/api/home");
+  //     })
+  //     .catch(err => {
+  //       res.status(401).json(err);
+  //     });
+
+  //   db.Remember.create({
+  //     one: req.body.one,
+  //     two: req.body.two,
+  //     three: req.body.three,
+  //     four: req.body.four,
+  //     five: req.body.five
+  //   })
+  //     .then(() => {
+  //       res.redirect(307, "/api/home");
+  //     })
+  //     .catch(err => {
+  //       res.status(401).json(err);
+  //     });
+
+  //   db.Mood.create({
+  //     mood: req.body.mood,
+  //     medication: req.body.medication,
+  //     hoursSleep: req.body.hoursSleep,
+  //     minutesExercise: req.body.minuteExercise,
+  //     minutesNapping: req.body.minutesNapping,
+  //     servingsCaffiene: req.body.servingsCaffiene,
+  //     servingsAlcohol: req.body.servingsAlcohol,
+  //     hoursTV: req.body.hoursTV,
+  //     showered: req.body.showered,
+  //     brushedTeeth: req.body.brushedTeeth,
+  //     madeBed: req.body.madeBed,
+  //     selfCare: req.body.selfCare,
+  //     minutesSocial: req.body.minutesSocial,
+  //     headache: req.body.headache,
+  //     nausea: req.body.nausea,
+  //     exhaustion: req.body.exhaustion,
+  //     insomnia: req.body.insomnia,
+  //     appetite: req.body.appetite,
+  //     menstruation: req.body.menstruation
+  //   })
+  //     .then(() => {
+  //       res.redirect(307, "/api/home");
+  //     })
+  //     .catch(err => {
+  //       res.status(401).json(err);
+  //     });
+  // });
+
+  app.post("/api/entry", async (req, res) => {
+    try {
+      const journalEntry = await db.Journal.create({
+        entry: req.body.entry,
+        date: req.body.date
       });
-    db.Grateful.create({
-      one: req.body.one,
-      two: req.body.two,
-      three: req.body.three,
-      four: req.body.four,
-      five: req.body.five
-    })
-      .then(() => {
-        res.redirect(307, "/api/home");
-      })
-      .catch(err => {
-        res.status(401).json(err);
+
+      await db.Grateful.create({
+        one: req.body.one,
+        two: req.body.two,
+        three: req.body.three,
+        four: req.body.four,
+        five: req.body.five
       });
-    db.Remember.create({
-      one: req.body.one,
-      two: req.body.two,
-      three: req.body.three,
-      four: req.body.four,
-      five: req.body.five
-    })
-      .then(() => {
-        res.redirect(307, "/api/home");
-      })
-      .catch(err => {
-        res.status(401).json(err);
+
+      await db.Remember.create({
+        one: req.body.one,
+        two: req.body.two,
+        three: req.body.three,
+        four: req.body.four,
+        five: req.body.five
       });
-    db.Mood.create({
-      mood: req.body.mood,
-      medication: req.body.medication,
-      hoursSleep: req.body.hoursSleep,
-      minutesExercise: req.body.minuteExercise,
-      minutesNapping: req.body.minutesNapping,
-      servingsCaffiene: req.body.servingsCaffiene,
-      servingsAlcohol: req.body.servingsAlcohol,
-      hoursTV: req.body.hoursTV,
-      showered: req.body.showered,
-      brushedTeeth: req.body.brushedTeeth,
-      madeBed: req.body.madeBed,
-      selfCare: req.body.selfCare,
-      minutesSocial: req.body.minutesSocial,
-      headache: req.body.headache,
-      nausea: req.body.nausea,
-      exhaustion: req.body.exhaustion,
-      insomnia: req.body.insomnia,
-      appetite: req.body.appetite,
-      menstruation: req.body.menstruation
-    })
-      .then(() => {
-        res.redirect(307, "/api/home");
-      })
-      .catch(err => {
-        res.status(401).json(err);
+
+      await db.Mood.create({
+        mood: req.body.mood,
+        medication: req.body.medication,
+        hoursSleep: req.body.hoursSleep,
+        minutesExercise: req.body.minuteExercise,
+        minutesNapping: req.body.minutesNapping,
+        servingsCaffiene: req.body.servingsCaffiene,
+        servingsAlcohol: req.body.servingsAlcohol,
+        hoursTV: req.body.hoursTV,
+        showered: req.body.showered,
+        brushedTeeth: req.body.brushedTeeth,
+        madeBed: req.body.madeBed,
+        selfCare: req.body.selfCare,
+        minutesSocial: req.body.minutesSocial,
+        headache: req.body.headache,
+        nausea: req.body.nausea,
+        exhaustion: req.body.exhaustion,
+        insomnia: req.body.insomnia,
+        appetite: req.body.appetite,
+        menstruation: req.body.menstruation
       });
+      res.json(journalEntry);
+    }
+
+    catch (error) {
+      console.log(error);
+      res.status(500);
+    }
   });
+
 
   // API call for retrieving an old journal entry
   app.get("/api/entry/:id", (req, res) => {
@@ -134,4 +191,5 @@ module.exports = function (app) {
       });
     }
   });
+
 };
