@@ -3,6 +3,7 @@ const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 
 module.exports = function (app) {
   app.get("/", (req, res) => {
@@ -32,7 +33,31 @@ module.exports = function (app) {
     const handlebarsObject = {
       userName: "Charlie",
     };
-    console.log("in route get / ");
+    console.log("home");
     res.render("home", handlebarsObject);
+  });
+
+  app.get("/members", isAuthenticated, (req, res) => {
+
+    db.Affirmation.findAll().then(function (data) {
+      console.log(data[3].dataValues.quote);
+      // randomly pick one affirmation
+      const rando = (Math.floor(Math.random() * 101) + 1);
+      const handlebarsObject = {
+        userName: "Charlie",
+        affirmData: data[rando].dataValues.quote
+      };
+      console.log("members");
+      res.render("members", handlebarsObject);
+    });
+
+  });
+
+  app.get("/historical", isAuthenticated, (req, res) => {
+    const handlebarsObject = {
+      userName: "Charlie",
+    };
+    console.log("historical");
+    res.render("historical", handlebarsObject);
   });
 };
