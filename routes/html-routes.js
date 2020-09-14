@@ -25,7 +25,8 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   // app.get("/members", isAuthenticated, (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../public/members.html"));
+  //   // res.sendFile(path.join(__dirname, "../public/members.html"));
+  //   res.render("home", handlebarsObject);
   // });
 
   // This is to pass back the affirmation. db.whatever.
@@ -38,9 +39,10 @@ module.exports = function (app) {
   });
 
   app.get("/members", isAuthenticated, (req, res) => {
-
+    //const handlebarsObject = { affirmData: "Hello" }
+    //res.render("members", handlebarsObject);
     db.Affirmation.findAll().then(function (data) {
-      console.log(data[3].dataValues.quote);
+       console.log(data[3].dataValues.quote);
       // randomly pick one affirmation
       const rando = (Math.floor(Math.random() * 101) + 1);
       const handlebarsObject = {
