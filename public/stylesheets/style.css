@@ -80,6 +80,14 @@ h2{
   padding-left: 50px;
   background-color: bisque;
 }
+
+
+.affirmation{
+  background-image: url(../img/chalk.jpg);
+  background-size: cover;
+  background-color: black;
+  text-decoration-color: white;
+}
 .footer{
   background-color: gray;
   color: white;
