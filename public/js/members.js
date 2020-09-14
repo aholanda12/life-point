@@ -1,45 +1,44 @@
 $(document).ready(() => {
 
   // Mood constants
-  const mood = $("");
-  const medication = $("input#medication");
-  const hoursSleep = $("input#sleepTime");
-  const minutesExercise = $("input#exerciseTime");
-  const minutesNapping = $("input#napTime");
-  const servingsCaffiene = $("input#caffieneCount");
-  const servingsAlcohol = $("input#alcoholCount");
-  const hoursDigital = $("input#mediaTime");
-  const minutesSocial = $("input#socialTime");
-  const showered = $("input#showered");
-  const teeth = $("input#teeth");
-  const selfCare = $("input#selfCare");
-  const headAche = $("input#headAche");
-  const nausea = $("input#nausea");
-  const exhaustion = $("input#exhaustion");
-  const insomnia = $("input#insomnia");
-  const menstruation = $("input#mensturation");
+  const mood = $(".moods");
+  const medication = $("#medication");
+  const hoursSleep = $("#sleepTime");
+  const minutesExercise = $("#exerciseTime");
+  const minutesNapping = $("#napTime");
+  const servingsCaffiene = $("#caffieneCount");
+  const servingsAlcohol = $("#alcoholCount");
+  const hoursDigital = $("#mediaTime");
+  const minutesSocial = $("#socialTime");
+  const showered = $("#showered");
+  const teeth = $("#teeth");
+  const selfCare = $("#selfCare");
+  const headAche = $("#headAche");
+  const nausea = $("#nausea");
+  const exhaustion = $("#exhaustion");
+  const insomnia = $("#insomnia");
+  const menstruation = $("#mensturation");
   const appetite = $("#appetite");
 
   // Grateful constants
-  const grateful1 = $("input#grateful1");
-  const grateful2 = $("input#grateful2");
-  const grateful3 = $("input#grateful3");
-  const grateful4 = $("input#grateful4");
-  const grateful5 = $("input#grateful5");
+  const grateful1 = $("#grateful1");
+  const grateful2 = $("#grateful2");
+  const grateful3 = $("#grateful3");
+  const grateful4 = $("#grateful4");
+  const grateful5 = $("#grateful5");
 
   // Remember constants
-  const remember1 = $("input#remember1");
-  const remember2 = $("input#remember2");
-  const remember3 = $("input#remember3");
-  const remember4 = $("input#remember4");
-  const remember5 = $("input#remember5");
+  const remember1 = $("#remember1");
+  const remember2 = $("#remember2");
+  const remember3 = $("#remember3");
+  const remember4 = $("#remember4");
+  const remember5 = $("#remember5");
 
   // Journal constants
-  const journalEntry = $("exampleFormControlTextarea1");
-  const date = $("");
+  const journalEntry = $("#exampleFormControlTextarea1");
+  const date = $("#date");
 
-  $(document).on("submit", function(event) {
-    event.preventDefault();
+  $("#submit").on("click", function () {
 
     const journalData = {
       entry: journalEntry.val().trim(),
@@ -89,14 +88,14 @@ $(document).ready(() => {
 
   });
 
-  function submitEntry() {
-    $.post("/api/entry", journalData, moodData, gratefulData, rememberData)
-      .then(() => {
-        window.location.replace("/home");
-        // If there's an error, log the error
-      })
-      .catch(err => {
-        console.log(err);
+  function submitEntry(data1, data2, data3, data4) {
+    $.ajax({
+      url: "/api/entry",
+      method: "POST",
+      body: { data1: data1, data2: data2, data3: data3, data4: data4 }
+    })
+      .then(function () {
+        window.location.href = "/home";
       });
   }
 });
