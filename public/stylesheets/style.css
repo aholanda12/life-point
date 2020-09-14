@@ -62,6 +62,6 @@ h2{
 #exampleFormControlTextarea1{
   background-image: url(../img/bound.jpg);
   background-size: cover;
-  text-indent: 50px;
+  padding-left: 50px;
   background-color: bisque;
 }
