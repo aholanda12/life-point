@@ -4,6 +4,19 @@ body{
   color: #8860D0;
 }
 
+header {
+  background-color: #49B1A7;
+  font-weight: bolder;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Neucha', cursive;
+}
+
+nav {
+  font-family: 'Neucha', cursive;
+  justify-items: baseline;
+}
+
 .signup,
 form.login {
   margin-top: 50px;
@@ -59,10 +72,24 @@ h2{
   font-family:'Neucha', cursive;
 }
 
+
 #exampleFormControlTextarea1{
   background-image: url(../img/bound.jpg);
   background-size: cover;
   text-indent: 50px;
   padding-left: 50px;
   background-color: bisque;
+}
+.footer{
+  background-color: gray;
+  color: white;
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Neucha', cursive;
+  font-weight: bolder;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
