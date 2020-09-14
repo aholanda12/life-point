@@ -68,5 +68,7 @@ h2{
 }
 
 .affirmation{
+  background-image: url(../img/chalk.jpg);
+  background-size: cover;
   background-color: black;
 }
