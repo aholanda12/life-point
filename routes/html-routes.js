@@ -63,3 +63,13 @@ module.exports = function (app) {
     res.render("historical", handlebarsObject);
   });
 };
+
+// app.get("/calendar", (req, res) => {
+//   console.log("calendar");
+//     res.render("calendar", handlebarsObject);
+// };
+
+// app.get("/resources", (req, res) => {
+//   console.log("resources");
+//     res.render("resources", handlebarsObject);
+// };

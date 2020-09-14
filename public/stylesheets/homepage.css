@@ -4,17 +4,16 @@ body {
     background-image: url('../img/Screen\ Shot\ 2020-09-12\ at\ 11.38.26\ AM.png') !important;
     background-color: white;
     background-repeat: no-repeat;
-    background-size: 85%;
+    background-size: 65%;
     background-position-y: 24rem;
     background-position-x: center;
    
 }
 
-header {
-    background-color: #49B1A7;
+h2 {
     font-weight: bolder;
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
     font-family: 'Neucha', cursive;
 }
 
@@ -66,16 +65,3 @@ h1 {
     background-color: #A16C86;
 }
 
-.footer{
-    background-color: gray;
-    color: white;
-    margin-top: 4rem;
-    padding: 2rem;
-    text-align: center;
-    font-family: 'Neucha', cursive;
-    font-weight: bolder;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
