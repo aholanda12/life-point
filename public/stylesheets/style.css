@@ -60,7 +60,8 @@ h2{
 }
 
 #exampleFormControlTextarea1{
-  background-image: url(../img/notebook.jpg);
+  background-image: url(../img/bound.jpg);
   background-size: cover;
+  text-indent: 50px;
   background-color: bisque;
 }
