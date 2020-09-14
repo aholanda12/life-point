@@ -9,8 +9,7 @@ form.login {
   margin-top: 50px;
 };
 
-.Titles{
-  font-size: 50px;
+h2{
   text-decoration: underline;
 };
 
@@ -21,10 +20,21 @@ form.login {
   color: #5AB9EA
 };
 
-
 .image{
   display:flex;
   flex-direction: row;
+}
+
+.moods{
+  display: flex;
+}
+
+.imageCol{
+  flex-direction: column;
+}
+
+.radioButton{
+  margin: 1px;
 }
 
 .moodimg{
