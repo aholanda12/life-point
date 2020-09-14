@@ -1,3 +1,5 @@
+USE life_point;
+
 INSERT INTO affirmations (quote, createdAt, updatedAt) VALUES ('1. Happiness is my  birthright. I embrace happiness as my set point state of being.', curDate(), curDate());
 INSERT INTO affirmations (quote, createdAt, updatedAt) VALUES ('2. it, I feel joy and contentment in this moment right now.', curDate(), curDate());
 INSERT INTO affirmations (quote, createdAt, updatedAt) VALUES ('3. I awake up in the  morning feeling happy and enthusiastic about my life.', curDate(), curDate());
