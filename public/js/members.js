@@ -17,7 +17,8 @@ $(document).ready(() => {
   const nausea = $("#nausea");
   const exhaustion = $("#exhaustion");
   const insomnia = $("#insomnia");
-  const menstruation = $("#mensturation");
+  const menstruation = $("#menstruation");
+
   const appetite = $("#appetite");
 
   // Grateful constants
@@ -38,7 +39,8 @@ $(document).ready(() => {
   const journalEntry = $("#exampleFormControlTextarea1");
   const date = $("#date");
 
-  $("#submit").on("click", function () {
+  $("#allDataForm").on("submit", function (event) {
+    event.preventDefault();
 
     const journalData = {
       entry: journalEntry.val().trim(),
@@ -56,7 +58,6 @@ $(document).ready(() => {
       hoursTV: hoursDigital.val().trim(),
       showered: showered.val().trim(),
       brushedTeeth: teeth.val().trim(),
-      madeBed: madeBed.val().trim(),
       selfCare: selfCare.val().trim(),
       minutesSocial: minutesSocial.val().trim(),
       headache: headAche.val().trim(),
@@ -98,5 +99,11 @@ $(document).ready(() => {
         window.location.href = "/home";
       });
   }
+
+  function getHeaderDate() {
+    const currentHeaderDate = moment().format("M/D/YYYY");
+    $("#date").text(currentHeaderDate);
+  }
+  getHeaderDate();
 });
 
