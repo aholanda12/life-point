@@ -31,11 +31,11 @@ module.exports = function (app) {
 
   // This is to pass back the affirmation. db.whatever.
   app.get("/home", isAuthenticated, (req, res) => {
-    const handlebarsObject = {
-      userName: "Charlie",
-    };
+   
     console.log("home");
-    res.render("home", handlebarsObject);
+    res.render("home", {
+      layout: "homelayout"
+    });
   });
 
   app.get("/members", isAuthenticated, (req, res) => {
@@ -61,4 +61,19 @@ module.exports = function (app) {
     console.log("historical");
     res.render("historical", handlebarsObject);
   });
+
+
+  app.get("/calendar", (req, res) => {
+    
+    const handlebarsObject = { calendar:"Hello" }
+    // console.log("calendar");
+    res.render("calendar", handlebarsObject);
+  });
+
+  app.get("/resources", (req, res) => {
+    const handlebarsObject = { resources:"Hello" }
+    // console.log("resources");
+    res.render("resources", handlebarsObject);
+  });
+
 };

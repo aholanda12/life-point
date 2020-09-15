@@ -4,7 +4,7 @@ body {
     background-image: url('../img/Screen\ Shot\ 2020-09-12\ at\ 11.38.26\ AM.png') !important;
     background-color: white;
     background-repeat: no-repeat;
-    background-size: 85%;
+    background-size: 65%;
     background-position-y: 24rem;
     background-position-x: center;
    
@@ -15,6 +15,13 @@ header {
     font-weight: bolder;
     text-align: center;
     padding: 2rem;
+    font-family: 'Neucha', cursive;
+  }
+
+h2 {
+    font-weight: bolder;
+    text-align: center;
+    padding: 3rem;
     font-family: 'Neucha', cursive;
 }
 
@@ -78,4 +85,4 @@ h1 {
     position: fixed;
     bottom: 0;
     left: 0;
-}
+  }

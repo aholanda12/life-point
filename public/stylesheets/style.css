@@ -4,6 +4,19 @@ body{
   color: #8860D0;
 }
 
+header {
+  background-color: #49B1A7;
+  font-weight: bolder;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Neucha', cursive;
+}
+
+nav {
+  font-family: 'Neucha', cursive;
+  justify-items: baseline;
+}
+
 .signup,
 form.login {
   margin-top: 50px;
@@ -57,4 +70,36 @@ h2{
 
 .resbar{
   font-family:'Neucha', cursive;
+}
+
+
+#exampleFormControlTextarea1{
+  background-image: url(../img/bound.jpg);
+  background-size: cover;
+  padding-left: 50px;
+  padding-top: 30px;
+  background-color: bisque;
+  font-family: 'Neucha', cursive;
+}
+
+
+.affirmation{
+  background-image: url(../img/chalk.jpg);
+  background-size: cover;
+  background-color: black;
+  color: white;
+  font-family: 'Coming Soon', cursive;
+}
+.footer{
+  background-color: gray;
+  color: white;
+  margin-top: 4rem;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Neucha', cursive;
+  font-weight: bolder;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

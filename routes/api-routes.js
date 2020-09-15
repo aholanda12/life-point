@@ -113,6 +113,7 @@ module.exports = function (app) {
     //
   });
 
+
   // API call for retrieving an old journal entry
   app.get("/api/entry/:id", (req, res) => {
     db.Journal.findOne({
@@ -150,4 +151,5 @@ module.exports = function (app) {
       });
     }
   });
+
 };

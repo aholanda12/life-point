@@ -18,6 +18,7 @@ $(document).ready(() => {
   const exhaustion = $("#exhaustion");
   const insomnia = $("#insomnia");
   const menstruation = $("#menstruation");
+
   const appetite = $("#appetite");
 
   // Grateful constants
@@ -40,6 +41,7 @@ $(document).ready(() => {
 
   $("#allDataForm").on("submit", function (event) {
     event.preventDefault();
+
     const journalData = {
       entry: journalEntry.val().trim(),
       date: date.val().trim()
