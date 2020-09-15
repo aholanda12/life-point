@@ -10,6 +10,14 @@ body {
    
 }
 
+header {
+    background-color: #49B1A7;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Neucha', cursive;
+  }
+
 h2 {
     font-weight: bolder;
     text-align: center;
@@ -65,3 +73,16 @@ h1 {
     background-color: #A16C86;
 }
 
+.footer{
+    background-color: gray;
+    color: white;
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+    font-family: 'Neucha', cursive;
+    font-weight: bolder;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
