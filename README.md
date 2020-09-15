@@ -3,18 +3,18 @@
 ## Description 
 A journal, an affirmation generator, a wellness tracker, and a well-being resource all in one application.
 ## Collaborators
-Ashley Holanda
+* Ashley Holanda
 [Github](https://github.com/aholanda12)
-Cristhal Fuertes
+* Cristhal Fuertes
 [Github](https://github.com/CMFuertes)
-Jacqueline Smith
+* Jacqueline Smith
 [Github](https://github.com/jerseyjackpot)
-Mustafa Dag
+* Mustafa Dag
 [Github](https://github.com/mustafadag84)
-Patrick Wells  
+* Patrick Wells  
 [Github](https://github.com/black03mach)
 ## Demonstration and GIF's 
-~To Be Added~
+To Be Added
 ## Table of Contents 
 * [Installation](#Installation)
 * [Usage](#Usage)
