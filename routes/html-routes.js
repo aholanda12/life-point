@@ -31,11 +31,11 @@ module.exports = function (app) {
 
   // This is to pass back the affirmation. db.whatever.
   app.get("/home", isAuthenticated, (req, res) => {
-    const handlebarsObject = {
-      userName: "Charlie",
-    };
+   
     console.log("home");
-    res.render("home", handlebarsObject);
+    res.render("home", {
+      layout: "homelayout"
+    });
   });
 
   app.get("/members", isAuthenticated, (req, res) => {
