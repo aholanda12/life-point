@@ -38,8 +38,8 @@ $(document).ready(() => {
   const journalEntry = $("#exampleFormControlTextarea1");
   const date = $("#date");
 
-  $("#submit").on("click", function () {
-
+  $("#allDataForm").on("submit", function (event) {
+    event.preventDefault();
     const journalData = {
       entry: journalEntry.val().trim(),
       date: date.val().trim()
