@@ -65,13 +65,13 @@ module.exports = function (app) {
 
   app.get("/calendar", (req, res) => {
     
-    const handlebarsObject = { calendar:"Hello" }
+    const handlebarsObject = { calendar:"Hello" };
     // console.log("calendar");
     res.render("calendar", handlebarsObject);
   });
 
   app.get("/resources", (req, res) => {
-    const handlebarsObject = { resources:"Hello" }
+    const handlebarsObject = { resources:"Hello" };
     // console.log("resources");
     res.render("resources", handlebarsObject);
   });
