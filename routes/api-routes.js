@@ -37,7 +37,8 @@ module.exports = function (app) {
     console.log(req.body);
     db.Journal.create({
       entry: req.body.data1.entry,
-      date: req.body.data1.date
+      date: req.body.data1.date,
+      UserId: req.user.id
     })
       .then(data => {
         const journalId = data.dataValues.id;
