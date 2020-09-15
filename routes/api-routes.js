@@ -31,126 +31,86 @@ module.exports = function (app) {
   });
 
   // API call for posting a new journal entry
-  // app.post("/api/entry", (req, res) => {
-  //   db.Journal.create({
-  //     entry: req.body.entry,
-  //     date: req.body.date
-  //   })
-  //     .then(() => {
-  //       res.redirect(307, "/api/home");
-  //     })
-  //     .catch(err => {
-  //       res.status(401).json(err);
-  //     });
-
-  //   db.Grateful.create({
-  //     one: req.body.one,
-  //     two: req.body.two,
-  //     three: req.body.three,
-  //     four: req.body.four,
-  //     five: req.body.five
-  //   })
-  //     .then(() => {
-  //       res.redirect(307, "/api/home");
-  //     })
-  //     .catch(err => {
-  //       res.status(401).json(err);
-  //     });
-
-  //   db.Remember.create({
-  //     one: req.body.one,
-  //     two: req.body.two,
-  //     three: req.body.three,
-  //     four: req.body.four,
-  //     five: req.body.five
-  //   })
-  //     .then(() => {
-  //       res.redirect(307, "/api/home");
-  //     })
-  //     .catch(err => {
-  //       res.status(401).json(err);
-  //     });
-
-  //   db.Mood.create({
-  //     mood: req.body.mood,
-  //     medication: req.body.medication,
-  //     hoursSleep: req.body.hoursSleep,
-  //     minutesExercise: req.body.minuteExercise,
-  //     minutesNapping: req.body.minutesNapping,
-  //     servingsCaffiene: req.body.servingsCaffiene,
-  //     servingsAlcohol: req.body.servingsAlcohol,
-  //     hoursTV: req.body.hoursTV,
-  //     showered: req.body.showered,
-  //     brushedTeeth: req.body.brushedTeeth,
-  //     madeBed: req.body.madeBed,
-  //     selfCare: req.body.selfCare,
-  //     minutesSocial: req.body.minutesSocial,
-  //     headache: req.body.headache,
-  //     nausea: req.body.nausea,
-  //     exhaustion: req.body.exhaustion,
-  //     insomnia: req.body.insomnia,
-  //     appetite: req.body.appetite,
-  //     menstruation: req.body.menstruation
-  //   })
-  //     .then(() => {
-  //       res.redirect(307, "/api/home");
-  //     })
-  //     .catch(err => {
-  //       res.status(401).json(err);
-  //     });
-  // });
-
-  app.post("/api/entry", async (req, res) => {
-    try {
-      const journalEntry = await db.Journal.create({
-        entry: req.body.entry,
-        date: req.body.date
-      });
-
-      await db.Grateful.create({
-        one: req.body.one,
-        two: req.body.two,
-        three: req.body.three,
-        four: req.body.four,
-        five: req.body.five
-      });
-
-      await db.Remember.create({
-        one: req.body.one,
-        two: req.body.two,
-        three: req.body.three,
-        four: req.body.four,
-        five: req.body.five
-      });
-
-      await db.Mood.create({
-        mood: req.body.mood,
-        medication: req.body.medication,
-        hoursSleep: req.body.hoursSleep,
-        minutesExercise: req.body.minuteExercise,
-        minutesNapping: req.body.minutesNapping,
-        servingsCaffiene: req.body.servingsCaffiene,
-        servingsAlcohol: req.body.servingsAlcohol,
-        hoursTV: req.body.hoursTV,
-        showered: req.body.showered,
-        brushedTeeth: req.body.brushedTeeth,
-        madeBed: req.body.madeBed,
-        selfCare: req.body.selfCare,
-        minutesSocial: req.body.minutesSocial,
-        headache: req.body.headache,
-        nausea: req.body.nausea,
-        exhaustion: req.body.exhaustion,
-        insomnia: req.body.insomnia,
-        appetite: req.body.appetite,
-        menstruation: req.body.menstruation
-      });
-      res.json(journalEntry);
-    }
-
-    catch (error) {
-      console.log(error);
-      res.status(500);
-    }
+  app.post("/api/entry", (req, res) => {
+    const journalC = db.Journal.create({
+      entry: req.body.entry,
+      date: req.body.date
+    })
+    .then( data => {
+      const journalId = data.dataValues.id;
+      console.log(data);
+      const gratefulC = db.Grateful.create({
+          one: req.body.one,
+          two: req.body.two,
+          three: req.body.three,
+          four: req.body.four,
+          five: req.body.five,
+          JournalId: journalId
+        });
+        // .then(() => {
+        //   res.redirect(307, "/api/home");
+        // })
+        // .catch(err => {
+        //   res.status(401).json(err);
+        // });
+        const rememberC = db.Remember.create({
+          one: req.body.one,
+          two: req.body.two,
+          three: req.body.three,
+          four: req.body.four,
+          five: req.body.five,
+          JournalId: journalId
+        });
+        // .then(() => {
+        //   res.redirect(307, "/api/home");
+        // })
+        // .catch(err => {
+        //   res.status(401).json(err);
+        // });
+        const moodC = db.Mood.create({
+          mood: req.body.mood,
+          medication: req.body.medication,
+          hoursSleep: req.body.hoursSleep,
+          minutesExercise: req.body.minuteExercise,
+          minutesNapping: req.body.minutesNapping,
+          servingsCaffiene: req.body.servingsCaffiene,
+          servingsAlcohol: req.body.servingsAlcohol,
+          hoursTV: req.body.hoursTV,
+          showered: req.body.showered,
+          brushedTeeth: req.body.brushedTeeth,
+          madeBed: req.body.madeBed,
+          selfCare: req.body.selfCare,
+          minutesSocial: req.body.minutesSocial,
+          headache: req.body.headache,
+          nausea: req.body.nausea,
+          exhaustion: req.body.exhaustion,
+          insomnia: req.body.insomnia,
+          appetite: req.body.appetite,
+          menstruation: req.body.menstruation,
+          JournalId: journalId
+        });
+        // .then(() => {
+        //   res.redirect(307, "/api/home");
+        // })
+        // .catch(err => {
+        //   res.status(401).json(err);
+        // });
+        Promise.all([gratefulC, rememberC, moodC])
+          .then(data => {
+            console.log(data);
+            res.redirect(307, "/api/home");
+          })
+          .catch(err => {
+            res.status(401).json(err);
+          });
+    });
+    // .then(() => {
+    //   res.redirect(307, "/api/home");
+    // })
+    // .catch(err => {
+    //   res.status(401).json(err);
+    // });
+    //
   });
 
 

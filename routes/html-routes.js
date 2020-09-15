@@ -42,7 +42,6 @@ module.exports = function (app) {
     //const handlebarsObject = { affirmData: "Hello" }
     //res.render("members", handlebarsObject);
     db.Affirmation.findAll().then(function (data) {
-      console.log(data[3].dataValues.quote);
       // randomly pick one affirmation
       const rando = (Math.floor(Math.random() * 101) + 1);
       const handlebarsObject = {

@@ -13,7 +13,6 @@ module.exports = function(sequelize, DataTypes) {
     hoursTV: { type: DataTypes.INTEGER },
     showered: { type: DataTypes.BOOLEAN },
     brushedTeeth: { type: DataTypes.BOOLEAN },
-    madeBed: { type: DataTypes.BOOLEAN },
     selfCare: { type: DataTypes.BOOLEAN },
     minutesSocial: { type: DataTypes.INTEGER },
     headache: { type: DataTypes.BOOLEAN },
