@@ -126,12 +126,26 @@ module.exports = function (app) {
       include: [db.Mood],
       include: [db.Grateful],
       include: [db.Remember],
-      include: [db.Affirmation],
+      // include: [db.Affirmation],
     }).then(function (dbJournal) {
       res.json(dbJournal);
     });
   });
 
+  app.get("/api/entrybydate/:date", (req, res) => {
+    db.Journal.findOne({
+      where: {
+        date: req.params.date,
+        UserId: req.user.id
+      },
+      // include: [db.Mood],
+      // include: [db.Grateful],
+      // include: [db.Remember],
+      // include: [db.Affirmation],
+    }).then(function (dbJournal) {
+      res.json(dbJournal);
+    });
+  });
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
