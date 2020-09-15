@@ -76,9 +76,10 @@ h2{
 #exampleFormControlTextarea1{
   background-image: url(../img/bound.jpg);
   background-size: cover;
-  text-indent: 50px;
   padding-left: 50px;
+  padding-top: 30px;
   background-color: bisque;
+  font-family: 'Neucha', cursive;
 }
 
 
@@ -86,7 +87,8 @@ h2{
   background-image: url(../img/chalk.jpg);
   background-size: cover;
   background-color: black;
-  text-decoration-color: white;
+  color: white;
+  font-family: 'Coming Soon', cursive;
 }
 .footer{
   background-color: gray;
