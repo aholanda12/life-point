@@ -32,14 +32,14 @@ module.exports = function (app) {
 
   // API call for posting a new journal entry
   app.post("/api/entry", (req, res) => {
-    const journalC = db.Journal.create({
+    db.Journal.create({
       entry: req.body.entry,
       date: req.body.date
     })
-    .then( data => {
-      const journalId = data.dataValues.id;
-      console.log(data);
-      const gratefulC = db.Grateful.create({
+      .then(data => {
+        const journalId = data.dataValues.id;
+        console.log(data);
+        const gratefulC = db.Grateful.create({
           one: req.body.one,
           two: req.body.two,
           three: req.body.three,
@@ -103,7 +103,7 @@ module.exports = function (app) {
           .catch(err => {
             res.status(401).json(err);
           });
-    });
+      });
     // .then(() => {
     //   res.redirect(307, "/api/home");
     // })
