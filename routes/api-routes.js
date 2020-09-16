@@ -140,8 +140,7 @@ module.exports = function (app) {
       },
       // include: [db.Mood],
       // include: [db.Grateful],
-      // include: [db.Remember],
-      // include: [db.Affirmation],
+      include: [db.Remember],
     }).then(function (dbJournal) {
       res.json(dbJournal);
     });
