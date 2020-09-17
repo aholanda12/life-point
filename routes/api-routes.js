@@ -132,6 +132,19 @@ module.exports = function (app) {
     });
   });
 
+
+  app.get("/api/calendar", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.Mood.findAll({
+      include: [db.Journal]
+    }).then(function(dbJournal) {
+      res.json(dbJournal);
+    });
+  });
+
+
   app.get("/api/entrybydate/:date", (req, res) => {
     db.Journal.findOne({
       where: {
@@ -146,6 +159,8 @@ module.exports = function (app) {
       res.json(dbJournal);
     });
   });
+
+  
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
