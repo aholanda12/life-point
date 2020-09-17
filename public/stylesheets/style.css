@@ -2,6 +2,11 @@ body{
   background-image: url('../img/newbackground1.png') !important;
   background-size:cover;
   color: #8860D0;
+  font-size: 14px;
+}
+
+body.main-layout {
+  font-size: 1.5rem;
 }
 
 header {
@@ -80,6 +85,7 @@ h2{
   padding-top: 30px;
   background-color: bisque;
   font-family: 'Neucha', cursive;
+  font-size: 1.5rem;
 }
 
 
@@ -89,12 +95,13 @@ h2{
   background-color: black;
   color: white;
   font-family: 'Coming Soon', cursive;
+  padding: 20px;
+  text-align: center;
 }
 .footer{
   background-color: gray;
   color: white;
-  margin-top: 4rem;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   font-family: 'Neucha', cursive;
   font-weight: bolder;

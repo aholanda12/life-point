@@ -5,7 +5,7 @@ $(document).ready(() => {
 
     const journalData = {
       entry: $("#exampleFormControlTextarea1").val().trim(),
-      date: $("#date").text() + " 00:00:00"
+      date: $("#date").text()
     };
 
     const moodData = {

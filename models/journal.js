@@ -3,6 +3,12 @@ module.exports = function(sequelize, DataTypes) {
     entry: { type: DataTypes.STRING },
     date: { type: DataTypes.DATE }
   });
-
+  Journal.associate = function(models) {
+    Journal.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Journal;
 };
