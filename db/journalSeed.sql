@@ -1,6 +1,6 @@
-INSERT INTO journals (entry, date, createdAt, updatedAt, UserId) VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '2020-09-13 00:00:00', curDate(), curDate(), 1);
-INSERT INTO journals (entry, date, createdAt, updatedAt, UserId) VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '2020-09-14 00:00:00', curDate(), curDate(), 1);
-INSERT INTO journals (entry, date, createdAt, updatedAt, UserId) VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '2020-09-15 00:00:00', curDate(), curDate(), 1);
+INSERT INTO journals (entry, date, createdAt, updatedAt, UserId) VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '9/13/2020', curDate(), curDate(), 1);
+INSERT INTO journals (entry, date, createdAt, updatedAt, UserId) VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '9/14/2020', curDate(), curDate(), 1);
+INSERT INTO journals (entry, date, createdAt, updatedAt, UserId) VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '9/15/2020', curDate(), curDate(), 1);
 
 INSERT INTO gratefuls (journalID, one, two, three, four, five, createdAt, updatedAt) VALUES (2, 'My spouse', 'Atlas', 'Good Health'," "," ",curDate(), curDate());
 INSERT INTO gratefuls (journalID, one, two, three, four, five, createdAt, updatedAt) VALUES (3, 'Understanding', 'Friends', 'Mind', 'Books', 'Weekend',curDate(), curDate());
