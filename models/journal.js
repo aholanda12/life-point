@@ -9,6 +9,15 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+    Journal.hasMany(models.Mood, {
+      onDelete: "cascade"
+    });
+    Journal.hasMany(models.Grateful, {
+      onDelete: "cascade"
+    });
+    Journal.hasMany(models.Remember, {
+      onDelete: "cascade"
+    });
   };
   return Journal;
 };

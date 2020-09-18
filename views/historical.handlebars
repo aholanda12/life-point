@@ -34,8 +34,12 @@
           srcset="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/smiling-face-with-open-mouth-and-smiling-eyes_1f604.png 2x"
           alt="Grinning Face" class="moodimg">
         <div class="form-check form-check-inline">
-          <input class="form-check-input radioButton" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-            value="option1">
+          {{#if moodData1}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+            checked>
+          {{else}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+          {{/if}}
         </div>
       </div>
       <div class="imageCol">
@@ -44,7 +48,12 @@
           srcset="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/slightly-smiling-face_1f642.png 2x"
           alt="Slightly Smiling Face" class="moodimg">
         <div class="form-check form-check-inline">
+          {{#if moodData2}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+            checked>
+          {{else}}
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+          {{/if}}
         </div>
       </div>
       <div class="imageCol">
@@ -53,7 +62,12 @@
           srcset="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/neutral-face_1f610.png 2x"
           alt="Neutral Face" class="moodimg">
         <div class="form-check form-check-inline">
+          {{#if moodData3}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"
+            checked>
+          {{else}}
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+          {{/if}}
         </div>
       </div>
       <div class="imageCol">
@@ -62,7 +76,12 @@
           srcset="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/slightly-frowning-face_1f641.png 2x"
           alt="Slightly Frowning Face on Apple iOS 13.3" class="moodimg">
         <div class="form-check form-check-inline">
+          {{#if moodData4}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"
+            checked>
+          {{else}}
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+          {{/if}}
         </div>
       </div>
       <div class="imageCol">
@@ -70,7 +89,12 @@
           srcset="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/crying-face_1f622.png 2x"
           alt="Crying Face" class="moodimg">
         <div class="form-check form-check-inline">
+          {{#if moodData5}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5"
+            checked>
+          {{else}}
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+          {{/if}}
         </div>
       </div>
       <div class="imageCol">
@@ -78,7 +102,12 @@
           srcset="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/237/angry-face_1f620.png 2x"
           alt="Angry Face" class="moodimg">
         <div class="form-check form-check-inline">
+          {{#if moodData6}}
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6"
+            checked>
+          {{else}}
           <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
+          {{/if}}
         </div>
       </div>
     </div>
@@ -90,59 +119,65 @@
         <div class="col-sm-5">Medication taken?</div>
         <div class="col-sm-7">
           <div class="form-check">
+            {{#if medData}}
+            <input class="form-check-input" type="checkbox" id="medication" checked>
+            {{else}}
             <input class="form-check-input" type="checkbox" id="medication">
-            </label>
+            {{/if}}
           </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Hours of Sleep?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="sleepTime">
+          <input type="number" min="0" value={{hoursData}} class="form-control" id="sleepTime">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Minutes of Exercise?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="exerciseTime">
+          <input type="number" min="0" value={{exercise}} class="form-control" id="exerciseTime">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Minutes Napping?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="napTime">
+          <input type="number" min="0" value={{napping}} class="form-control" id="napTime">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Servings of Caffiene?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="caffieneCount">
+          <input type="number" min="0" value={{caffiene}} class="form-control" id="caffieneCount">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Servings of Alcohol?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="alcoholCount">
+          <input type="number" min="0" value={{alcohol}} class="form-control" id="alcoholCount">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Hours of Digital Media?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="mediaTime">
+          <input type="number" min="0" value={{tv}} class="form-control" id="mediaTime">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-5 col-form-label">Minutes Socializing?</label>
         <div class="col-sm-3">
-          <input type="number" min="0" value="0" class="form-control" id="socialTime">
+          <input type="number" min="0" value={{social}} class="form-control" id="socialTime">
         </div>
       </div>
       <div class="form-group row">
         <div class="col-sm-5">Showered?</div>
         <div class="col-sm-7">
           <div class="form-check">
+            {{#if shower}}
+            <input class="form-check-input" type="checkbox" id="showered" checked>
+            {{else}}
             <input class="form-check-input" type="checkbox" id="showered">
-            </label>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -150,8 +185,11 @@
         <div class="col-sm-5">Brush teeth?</div>
         <div class="col-sm-7">
           <div class="form-check">
+            {{#if brushed}}
+            <input class="form-check-input" type="checkbox" id="teeth" checked>
+            {{else}}
             <input class="form-check-input" type="checkbox" id="teeth">
-            </label>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -159,8 +197,11 @@
         <div class="col-sm-5">Self Care?</div>
         <div class="col-sm-7">
           <div class="form-check">
+            {{#if care}}
+            <input class="form-check-input" type="checkbox" id="selfCare" checked>
+            {{else}}
             <input class="form-check-input" type="checkbox" id="selfCare">
-            </label>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -172,8 +213,11 @@
       <div class="col-sm-5">Headache?</div>
       <div class="col-sm-7">
         <div class="form-check">
+          {{#if ache}}
+          <input class="form-check-input" type="checkbox" id="headAche" checked>
+          {{else}}
           <input class="form-check-input" type="checkbox" id="headAche">
-          </label>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -181,8 +225,11 @@
       <div class="col-sm-5">Nausea?</div>
       <div class="col-sm-7">
         <div class="form-check">
+          {{#if nauseaa}}
+          <input class="form-check-input" type="checkbox" id="nausea" checked>
+          {{else}}
           <input class="form-check-input" type="checkbox" id="nausea">
-          </label>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -190,8 +237,11 @@
       <div class="col-sm-5">Exhaustion?</div>
       <div class="col-sm-7">
         <div class="form-check">
+          {{#if exhaust}}
+          <input class="form-check-input" type="checkbox" id="exhaustion" checked>
+          {{else}}
           <input class="form-check-input" type="checkbox" id="exhaustion">
-          </label>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -199,8 +249,11 @@
       <div class="col-sm-5">Insomnia?</div>
       <div class="col-sm-7">
         <div class="form-check">
+          {{#if sleepless}}
+          <input class="form-check-input" type="checkbox" id="insomnia" checked>
+          {{else}}
           <input class="form-check-input" type="checkbox" id="insomnia">
-          </label>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -208,8 +261,11 @@
       <div class="col-sm-5">Menstruation?</div>
       <div class="col-sm-7">
         <div class="form-check">
+          {{#if period}}
+          <input class="form-check-input" type="checkbox" id="menstruation" checked>
+          {{else}}
           <input class="form-check-input" type="checkbox" id="menstruation">
-          </label>
+          {{/if}}
         </div>
       </div>
     </div>
@@ -237,35 +293,35 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">1.</span>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="greatful1" aria-describedby="basic-addon1"
+        <input type="text" class="form-control" placeholder={{grate1}} aria-label="greatful1" aria-describedby="basic-addon1"
           id="grateful1">
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">2.</span>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="greatful2" aria-describedby="basic-addon1"
+        <input type="text" class="form-control" placeholder={{grate2}} aria-label="greatful2" aria-describedby="basic-addon1"
           id="grateful2">
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">3.</span>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="greatful3" aria-describedby="basic-addon1"
+        <input type="text" class="form-control" placeholder={{grate3}} aria-label="greatful3" aria-describedby="basic-addon1"
           id="grateful3">
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">4.</span>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="greatful4" aria-describedby="basic-addon1"
+        <input type="text" class="form-control" placeholder={{grate4}} aria-label="greatful4" aria-describedby="basic-addon1"
           id="grateful4">
       </div>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">5.</span>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="greatful5" aria-describedby="basic-addon1"
+        <input type="text" class="form-control" placeholder={{grate5}} aria-label="greatful5" aria-describedby="basic-addon1"
           id="grateful5">
       </div>
     </div>
@@ -276,35 +332,35 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">1.</span>
       </div>
-      <input type="text" class="form-control" placeholder="" aria-label="remember1" aria-describedby="basic-addon1"
+      <input type="text" class="form-control" placeholder={{rem1}} aria-label="remember1" aria-describedby="basic-addon1"
         id="remember1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">2.</span>
       </div>
-      <input type="text" class="form-control" placeholder="" aria-label="remember2" aria-describedby="basic-addon1"
+      <input type="text" class="form-control" placeholder={{rem2}} aria-label="remember2" aria-describedby="basic-addon1"
         id="remember2">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">3.</span>
       </div>
-      <input type="text" class="form-control" placeholder="" aria-label="remember3" aria-describedby="basic-addon1"
+      <input type="text" class="form-control" placeholder={{rem3}} aria-label="remember3" aria-describedby="basic-addon1"
         id="remember3">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">4.</span>
       </div>
-      <input type="text" class="form-control" placeholder="" aria-label="remember4" aria-describedby="basic-addon1"
+      <input type="text" class="form-control" placeholder={{rem4}} aria-label="remember4" aria-describedby="basic-addon1"
         id="remember4">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">5.</span>
       </div>
-      <input type="text" class="form-control" placeholder="" aria-label="remember5" aria-describedby="basic-addon1"
+      <input type="text" class="form-control" placeholder={{rem5}} aria-label="remember5" aria-describedby="basic-addon1"
         id="remember5">
     </div>
   </div>
