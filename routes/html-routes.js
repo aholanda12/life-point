@@ -55,11 +55,14 @@ module.exports = function (app) {
   });
 
   app.get("/historical", isAuthenticated, (req, res) => {
-    const handlebarsObject = {
-      userName: "Charlie",
-    };
-    console.log("historical");
-    res.render("historical", handlebarsObject);
+    db.Affirmation.findAll().then(function (data) {
+      const rando = (Math.floor(Math.random() * 101) + 1);
+      const handlebarsObject = {
+        affirmData: data[rando].dataValues.quote
+      };
+      console.log("historical");
+      res.render("historical", handlebarsObject);
+    });
   });
 
 
