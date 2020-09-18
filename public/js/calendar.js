@@ -56,6 +56,6 @@ document.querySelector("#calendar").addEventListener("clickDay", function (e) {
 });
 
 function callEntry(id) {
-  window.location.href = "/entry/:" + id;
+  window.location.href = "/api/entry/" + id;
 }
 
