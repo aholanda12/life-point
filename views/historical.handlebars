@@ -270,11 +270,11 @@
       </div>
     </div>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle col-sm-7" type="button" id="dropdownMenuButton"
-        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Appetite?
+      <button class="btn btn-secondary dropdown-toggle col-sm-7" type="button" id="appetiteDropdownButton"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-appetite="{{appetiteValue}}">
+        Appetite: {{appetiteText}}
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="appetite">
+      <div class="dropdown-menu" aria-labelledby="appetiteDropdownButton" id="appetite">
         <a class="dropdown-item">Low</a>
         <a class="dropdown-item">Medium</a>
         <a class="dropdown-item">High</a>
@@ -367,7 +367,7 @@
   <div class="columns col-md-4">
     <div class="form-group">
       <h2 for="exampleFormControlTextarea1">Journal Entry</h2>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="37"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="37">{{journalText}}</textarea>
     </div>
     <button type="button" class="btn btn-primary" id="submit">Submit</button>
     <button type="button" class="btn btn-primary" id="delete">Delete</button>
