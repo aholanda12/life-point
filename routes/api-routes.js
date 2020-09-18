@@ -170,6 +170,7 @@ module.exports = function (app) {
         rem3: dbJournal.dataValues.Remembers[0].three,
         rem4: dbJournal.dataValues.Remembers[0].four,
         rem5: dbJournal.dataValues.Remembers[0].five,
+        journalText: dbJournal.dataValues.entry
       };
       res.render("historical", handlebarsObject);
     });
