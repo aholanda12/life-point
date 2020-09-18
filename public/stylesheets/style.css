@@ -110,3 +110,9 @@ h2{
   padding-bottom: 1rem;
   padding-top: 0.3rem;
 }
+
+.date{
+  text-align: center;
+  font-family: 'Neucha', cursive;
+  font-weight: bolder;
+}
