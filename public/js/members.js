@@ -80,15 +80,16 @@ $(document).ready(() => {
     $("#date").text(correctDate);
   }
   getHeaderDate();
+
+  $("body").on("click touchend", ".appetite-dropdown", function (event) {
+    console.log(event.target);
+    // #appetiteDropdownButton
+    console.log($("#appetiteDropdownButton").text());
+    setTimeout(function (event) {
+      $("#appetiteDropdownButton").text("Appetite: " + $(event.target).text());
+      $("#appetiteDropdownButton").attr("data-appetite", $(event.target).attr("data-appetite-value"));
+    }, 50, event);
+  
+  });
 });
 
-$("body").on("click touchend", ".appetite-dropdown", function (event) {
-  console.log(event.target);
-  // #appetiteDropdownButton
-  console.log($("#appetiteDropdownButton").text());
-  setTimeout(function (event) {
-    $("#appetiteDropdownButton").text("Appetite: " + $(event.target).text());
-    $("#appetiteDropdownButton").attr("data-appetite", $(event.target).attr("data-appetite-value"));
-  }, 50, event);
-
-});

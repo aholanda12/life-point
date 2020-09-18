@@ -59,3 +59,4 @@ function callEntry(id) {
   window.location.href = "/api/entry/" + id;
 }
 
+
