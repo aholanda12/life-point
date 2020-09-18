@@ -1,3 +1,43 @@
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+
+.calendar .calendar-header .year-title:hover,
+.calendar .calendar-header .prev:hover,
+.calendar .calendar-header .next:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.calendar .calendar-header .year-neighbor {
+  color: inherit;
+  opacity: 0.7;
+}
+
+.calendar .calendar-header .year-neighbor2 {
+  color: inherit;
+  opacity: 0.4;
+}
+
+.calendar .month-container {
+  height: 210px;
+}
+
+
+.calendar table.month {
+  height: 100%;
+}
+
+.calendar table.month .month-title {
+  background-color: #49B1A7;
+  padding: 5px;
+}
+
+.calendar table.month .day-header {
+  padding-top: 8px;
+  border-bottom: 2px solid#49B1A7;
+}
+
+.calendar table.month td.day .day-content {
+  padding: 5px 8px;
+}
