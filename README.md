@@ -21,6 +21,9 @@ A journal, an affirmation generator, a wellness tracker, and a well-being resour
 
 ![screenshot2](https://user-images.githubusercontent.com/64985702/93638366-29009900-f9c5-11ea-81b5-5f52298ab040.jpg)
 
+![Screen Shot 2020-09-18 at 3 20 06 PM](https://user-images.githubusercontent.com/64985702/93638732-d2e02580-f9c5-11ea-9d90-dc3b73dc5097.png)
+
+
 To Be Added
 ## Table of Contents 
 * [Installation](#Installation)
