@@ -135,6 +135,7 @@ module.exports = function (app) {
       // console.log(dbJournal.dataValues.Gratefuls);
       // console.log(dbJournal.dataValues.Remembers);
       // console.log(dbJournal.dataValues.Journals);
+      const appetiteArray = ["Low", "Medium", "High", "Very High"];
       const handlebarsObject = {
         userName: "Charlie",
         medData: dbJournal.dataValues.Moods[0].medication,
@@ -170,7 +171,9 @@ module.exports = function (app) {
         rem3: dbJournal.dataValues.Remembers[0].three,
         rem4: dbJournal.dataValues.Remembers[0].four,
         rem5: dbJournal.dataValues.Remembers[0].five,
-        journalText: dbJournal.dataValues.entry
+        journalText: dbJournal.dataValues.entry,
+        appetiteText: appetiteArray[dbJournal.dataValues.Moods[0].appetite-1],
+        appetiteValue: dbJournal.dataValues.Moods[0].appetite
       };
       res.render("historical", handlebarsObject);
     });
