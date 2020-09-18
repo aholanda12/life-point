@@ -13,29 +13,31 @@ const currentDate = (newMonth + remainder);
 
 $("#button-a").on("click", function (event) {
   event.preventDefault();
-  console.log(currentDate);
-  function getDate(data) {
-    $.ajax({
-      url: "/api/calendar",
-      method: "GET",
-      data: { data: data }
-    })
-      .then(function (res) {
-        for (let i = 0;i < res.length;i++) {
-          const dataDate = res[i].Journal.date;
-          console.log(dataDate);
-          if (dataDate === currentDate) {
-            console.log("It matches");
-            const entryId = res[i].Journal.id;
-            callEntry(entryId);
-          }
-          else {
-            window.location.href = "/members";
-          }
-        }
-      });
-  }
-  getDate();
+  window.location.href = "/members";
+  // console.log(currentDate);
+  // function getDate(data) {
+  //   $.ajax({
+  //     url: "/api/calendar",
+  //     method: "GET",
+  //     data: { data: data }
+  //   })
+  //     .then(function (res) {
+  //       console.log("thj")
+  //       for (let i = 0;i < res.length;i++) {
+  //         const dataDate = res[i].Journal.date;
+  //         console.log(dataDate);
+  //         if (dataDate === currentDate) {
+  //           console.log("It matches");
+  //           const entryId = res[i].Journal.id;
+  //           callEntry(entryId);
+  //         }
+  //         else {
+  //           window.location.href = "/members";
+  //         }
+  //       }
+  //     });
+  // }
+  // getDate();
 
 });
 

@@ -41,12 +41,13 @@ module.exports = function (app) {
   app.get("/members", isAuthenticated, (req, res) => {
     //const handlebarsObject = { affirmData: "Hello" }
     //res.render("members", handlebarsObject);
-    db.Affirmation.findAll().then(function (data) {
+    db.Affirmation.findOne({order:db.sequelize.random()}).then(function (data) {
       // randomly pick one affirmation
-      const rando = (Math.floor(Math.random() * 101) + 1);
+      // const rando = (Math.floor(Math.random() * 101) + 1);
       const handlebarsObject = {
         userName: "Charlie",
-        affirmData: data[rando].dataValues.quote
+        affirmData: data.quote
+        // affirmData: data[rando].dataValues.quote
       };
       console.log("members");
       res.render("members", handlebarsObject);
