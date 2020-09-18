@@ -14,19 +14,19 @@ header {
     background-color: #49B1A7;
     font-weight: bolder;
     text-align: center;
-    padding: 2rem;
+    padding: 0.5rem;
     font-family: 'Neucha', cursive;
   }
 
 h2 {
     font-weight: bolder;
     text-align: center;
-    padding: 3rem;
+    padding: 1rem;
     font-family: 'Neucha', cursive;
 }
 
 h1 {
-    font-size: xx-large;
+    font-size: largearge;
     font-weight: bolder;
 }
 
@@ -35,9 +35,9 @@ h1 {
     color: black;
     font-family: 'Neucha', cursive;
     margin-top: 1rem;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-spacing: 4rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-spacing: 2rem;
     font-weight: bolder;
 }
 
@@ -45,19 +45,19 @@ h1 {
     background-color: #49B1A7;
     color: black;
     font-family: 'Neucha', cursive;
-    margin-top: 5rem;
-    padding: 2rem;
-    border-spacing: 4rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-spacing: 2rem;
     font-weight: bolder;    
 }
 
 #button-c {
     background-color: #49B1A7;
     color: black;
-    margin-top: 5rem;
+    margin-top: 1rem;
     font-family: 'Neucha', cursive;
-    padding: 2rem;
-    border-spacing: 4rem;
+    padding: 1rem;
+    border-spacing: 2rem;
     font-weight: bolder; 
 }
 
@@ -75,13 +75,9 @@ h1 {
 
 .footer{
     background-color: gray;
-    color: white;
-    padding: 1.5rem;
+    color: black;
     text-align: center;
     font-family: 'Neucha', cursive;
     font-weight: bolder;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    padding-bottom: 1rem;
   }
