@@ -15,7 +15,7 @@ A journal, an affirmation generator, a wellness tracker, and a well-being resour
 [Github](https://github.com/black03mach)
 ## Demonstration and GIF's 
 
-https://github.com/aholanda12/life-point/blob/master/public/img/closerdemogif.gif
+![demo](https://github.com/aholanda12/life-point/blob/master/public/img/closerdemogif.gif)
 
 ![Screen Shot 2020-09-18 at 3 18 10 PM](https://user-images.githubusercontent.com/64985702/93638216-e939b180-f9c4-11ea-8da0-4ee934c88c39.png)
 
