@@ -63,19 +63,32 @@ $(document).ready(() => {
   }
 
   function getHeaderDate() {
-    const currentHeaderDate = moment().format("YYYY-MM-DD");
-    $("#date").text(currentHeaderDate);
+    const currentHeaderDate = moment().format("MM/DD/YYYY");
+    const month = (currentHeaderDate.slice(0, 2));
+    const remainder = (currentHeaderDate.slice(2, 10));
+    console.log(month, remainder);
+    const splitMonth = month.split("");
+    if (splitMonth[0] === "0") {
+      newMonth = splitMonth[1];
+    }
+    else {
+      newMonth = month;
+    }
+    console.log(newMonth);
+    const correctDate = (newMonth + remainder);
+    console.log(correctDate);
+    $("#date").text(correctDate);
   }
   getHeaderDate();
 });
 
-$("body").on("click touchend", ".appetite-dropdown",function(event){
+$("body").on("click touchend", ".appetite-dropdown", function (event) {
   console.log(event.target);
   // #appetiteDropdownButton
   console.log($("#appetiteDropdownButton").text());
-  setTimeout( function(event){
+  setTimeout(function (event) {
     $("#appetiteDropdownButton").text("Appetite: " + $(event.target).text());
     $("#appetiteDropdownButton").attr("data-appetite", $(event.target).attr("data-appetite-value"));
   }, 50, event);
-  
+
 });
