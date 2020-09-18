@@ -4,9 +4,8 @@ body {
     background-image: url('../img/Screen\ Shot\ 2020-09-12\ at\ 11.38.26\ AM.png') !important;
     background-color: white;
     background-repeat: no-repeat;
-    background-size: 65%;
-    background-position-y: 24rem;
-    background-position-x: center;
+    background-attachment: fixed;
+    background-position: center;
    
 }
 
