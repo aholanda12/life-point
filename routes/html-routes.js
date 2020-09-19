@@ -66,7 +66,7 @@ module.exports = function (app) {
   });
 
 
-  app.get("/calendar", (req, res) => {
+  app.get("/calendar", isAuthenticated, (req, res) => {
     
     const handlebarsObject = { calendar:"Hello" };
     // console.log("calendar");
