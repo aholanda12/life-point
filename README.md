@@ -27,7 +27,7 @@ A journal, an affirmation generator, a wellness tracker, and a well-being resour
 
 ![demophonegif](https://github.com/aholanda12/life-point/blob/master/public/img/demophonegif.gif)
 
-![Heroku](https://life-point.herokuapp.com/)
+[Heroku](https://life-point.herokuapp.com/)
 ## Table of Contents 
 * [Installation](#Installation)
 * [Usage](#Usage)
