@@ -11,7 +11,6 @@ else {
 const currentDate = (newMonth + remainder);
 
 function getDate(data) {
-  const emptyArray = [];
   $.ajax({
     url: "/api/calendar",
     method: "GET",

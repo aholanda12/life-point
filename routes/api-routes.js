@@ -123,6 +123,7 @@ module.exports = function (app) {
     console.log(req.params.id);
     db.Journal.findOne({
       where: {
+        UserId: req.user.id,
         id: req.params.id
       },
       include: [db.Mood, db.Grateful, db.Remember],
@@ -194,7 +195,9 @@ module.exports = function (app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
     db.Mood.findAll({
-      include: [db.Journal]
+      include: [
+        { model: db.Journal, 
+          where: { UserId: req.user.id }}]
     }).then(function (dbJournal) {
       res.json(dbJournal);
     });
