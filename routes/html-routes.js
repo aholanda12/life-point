@@ -22,14 +22,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // app.get("/members", isAuthenticated, (req, res) => {
-  //   // res.sendFile(path.join(__dirname, "../public/members.html"));
-  //   res.render("home", handlebarsObject);
-  // });
-
-  // This is to pass back the affirmation. db.whatever.
+  // This is to pass back the affirmation.
   app.get("/home", isAuthenticated, (req, res) => {
    
     console.log("home");
@@ -38,6 +31,7 @@ module.exports = function (app) {
     });
   });
 
+  // Routes to the blank data entry page
   app.get("/members", isAuthenticated, (req, res) => {
     //const handlebarsObject = { affirmData: "Hello" }
     //res.render("members", handlebarsObject);
@@ -54,28 +48,27 @@ module.exports = function (app) {
 
   });
 
+  // Routes to a historical page
   app.get("/historical", isAuthenticated, (req, res) => {
     db.Affirmation.findAll().then(function (data) {
       const rando = (Math.floor(Math.random() * 101) + 1);
       const handlebarsObject = {
         affirmData: data[rando].dataValues.quote
       };
-      console.log("historical");
       res.render("historical", handlebarsObject);
     });
   });
 
-
+  // Routes to the calendar page
   app.get("/calendar", isAuthenticated, (req, res) => {
     
     const handlebarsObject = { calendar:"Hello" };
-    // console.log("calendar");
     res.render("calendar", handlebarsObject);
   });
 
+  // Routes to the resource page
   app.get("/resources", (req, res) => {
     const handlebarsObject = { resources:"Hello" };
-    // console.log("resources");
     res.render("resources", handlebarsObject);
   });
 

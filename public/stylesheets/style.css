@@ -1,3 +1,4 @@
+/* Body */
 body{
   background-image: url('../img/newbackground1.png') !important;
   background-size:cover;
@@ -12,6 +13,7 @@ body.main-layout {
   font-size: 1.5rem;
 }
 
+/* Text elements */
 header {
   background-color: #49B1A7;
   font-weight: bolder;
@@ -41,6 +43,7 @@ h2{
   color: #5AB9EA
 };
 
+/* Images, buttons, and sections */
 .image{
   display:flex;
   flex-direction: row;
@@ -101,6 +104,14 @@ h2{
   padding: 20px;
   text-align: center;
 }
+
+.date{
+  text-align: center;
+  font-family: 'Neucha', cursive;
+  font-weight: bolder;
+}
+
+/* Footer */
 .footer{
   background-color: gray;
   color: black;
@@ -109,10 +120,4 @@ h2{
   font-weight: bolder;
   padding-bottom: 1rem;
   padding-top: 0.3rem;
-}
-
-.date{
-  text-align: center;
-  font-family: 'Neucha', cursive;
-  font-weight: bolder;
 }

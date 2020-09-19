@@ -1,3 +1,4 @@
+// Model for moods and habits
 module.exports = function(sequelize, DataTypes) {
   const Mood = sequelize.define("Mood", {
     mood: {
@@ -22,6 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     appetite: { type: DataTypes.INTEGER },
     menstruation: { type: DataTypes.BOOLEAN }
   });
+    // Mood is associated with the journal it is submitted with
   Mood.associate = function(models) {
     Mood.belongsTo(models.Journal, {
       foreignKey: {

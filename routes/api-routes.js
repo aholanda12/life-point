@@ -34,7 +34,8 @@ module.exports = function (app) {
 
   // API call for posting a new journal entry
   app.post("/api/entry", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
+    // Creates the journal first
     db.Journal.create({
       entry: req.body.data1.entry,
       date: req.body.data1.date,
@@ -42,7 +43,8 @@ module.exports = function (app) {
     })
       .then(data => {
         const journalId = data.dataValues.id;
-        console.log(data);
+        // console.log(data);
+        // Creates the grateful, remember, and mood data after the journal in order to use the id
         const gratefulC = db.Grateful.create({
           one: req.body.data3.one,
           two: req.body.data3.two,
@@ -51,12 +53,6 @@ module.exports = function (app) {
           five: req.body.data3.five,
           JournalId: journalId
         });
-        // .then(() => {
-        //   res.redirect(307, "/api/home");
-        // })
-        // .catch(err => {
-        //   res.status(401).json(err);
-        // });
         const rememberC = db.Remember.create({
           one: req.body.data4.one,
           two: req.body.data4.two,
@@ -65,12 +61,6 @@ module.exports = function (app) {
           five: req.body.data4.five,
           JournalId: journalId
         });
-        // .then(() => {
-        //   res.redirect(307, "/api/home");
-        // })
-        // .catch(err => {
-        //   res.status(401).json(err);
-        // });
         const moodC = db.Mood.create({
           mood: parseInt(req.body.data2.mood),
           medication: parseBool(req.body.data2.medication),
@@ -92,12 +82,7 @@ module.exports = function (app) {
           menstruation: parseBool(req.body.data2.menstruation),
           JournalId: journalId
         });
-        // .then(() => {
-        //   res.redirect(307, "/api/home");
-        // })
-        // .catch(err => {
-        //   res.status(401).json(err);
-        // });
+        // Uses a promise to create the dependant data, then redirects to the homepage
         Promise.all([gratefulC, rememberC, moodC])
           .then(data => {
             console.log(data);
@@ -107,41 +92,28 @@ module.exports = function (app) {
             res.status(401).json(err);
           });
       });
-    // .then(() => {
-    //   res.redirect(307, "/api/home");
-    // })
-    // .catch(err => {
-    //   res.status(401).json(err);
-    // });
-    //
   });
 
 
   // API call for retrieving an old journal entry
   app.get("/api/entry/:id", (req, res) => {
-    console.log("NFL IS BACK");
-    console.log(req.params.id);
+    // console.log(req.params.id);
+    // Find one journal entry that matches the id, based on the UserId
     db.Journal.findOne({
       where: {
         UserId: req.user.id,
         id: req.params.id
       },
       include: [db.Mood, db.Grateful, db.Remember],
-      // include: [db.Grateful],
-      // include: [db.Remember],
-      // include: [db.Affirmation],
     }).then(function (dbJournal) {
-      console.log(dbJournal);
+      // console.log(dbJournal);
       const rando = (Math.floor(Math.random() * 101) + 1);
       db.Affirmation.findOne({
         where: {
           id: rando
         },
       }).then(function (data) {
-        // console.log(dbJournal.dataValues.Moods);
-        // console.log(dbJournal.dataValues.Gratefuls);
-        // console.log(dbJournal.dataValues.Remembers);
-        // console.log(dbJournal.dataValues.Journals);
+        // Renders the data onto the historical page
         const appetiteArray = ["Low", "Medium", "High", "Very High"];
         const handlebarsObject = {
           userName: "Charlie",
@@ -189,31 +161,13 @@ module.exports = function (app) {
   });
 
 
-
+  // API call to get the calendar data
   app.get("/api/calendar", function (req, res) {
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
+    // Gets the data for each mood based on the journal and UserId they are tied to
     db.Mood.findAll({
       include: [
         { model: db.Journal, 
           where: { UserId: req.user.id }}]
-    }).then(function (dbJournal) {
-      res.json(dbJournal);
-    });
-  });
-
-
-  app.get("/api/entrybydate/:date", (req, res) => {
-    db.Journal.findOne({
-      where: {
-        date: req.params.date,
-        UserId: req.user.id
-      },
-      // include: [db.Mood],
-      // include: [db.Grateful],
-      // include: [db.Remember],
-      // include: [db.Affirmation],
     }).then(function (dbJournal) {
       res.json(dbJournal);
     });

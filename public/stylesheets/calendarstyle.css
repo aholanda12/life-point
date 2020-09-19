@@ -1,8 +1,9 @@
+/* Body */
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-
+/* Calendar */
 .calendar .calendar-header .year-title:hover,
 .calendar .calendar-header .prev:hover,
 .calendar .calendar-header .next:hover{

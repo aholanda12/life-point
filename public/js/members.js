@@ -1,13 +1,17 @@
+// Upon the page loading
 $(document).ready(() => {
 
+  // When the submit button is clicked
   $("#allDataForm").on("submit", function (event) {
     event.preventDefault();
 
+    // Submit the journal data
     const journalData = {
       entry: $("#exampleFormControlTextarea1").val().trim(),
       date: $("#date").text()
     };
 
+    // Submit the mood data
     const moodData = {
       mood: $("[name=inlineRadioOptions]:checked").val(),
       medication: $("#medication").prop("checked"),
@@ -29,6 +33,7 @@ $(document).ready(() => {
       menstruation: $("#menstruation").prop("checked")
     };
 
+    // Submit the grateful data
     const gratefulData = {
       one: $("#grateful1").val().trim(),
       two: $("#grateful2").val().trim(),
@@ -37,6 +42,7 @@ $(document).ready(() => {
       five: $("#grateful5").val().trim()
     };
 
+    // Submit the remember data
     const rememberData = {
       one: $("#remember1").val().trim(),
       two: $("#remember2").val().trim(),
@@ -44,12 +50,13 @@ $(document).ready(() => {
       four: $("#remember4").val().trim(),
       five: $("#remember5").val().trim()
     };
-
-
+    
+    // Submit the entry with all of the above data
     submitEntry(journalData, moodData, gratefulData, rememberData);
 
   });
 
+  // Function to post the entry to our data base, then 
   function submitEntry(data1, data2, data3, data4) {
     $.ajax({
       url: "/api/entry",
@@ -62,6 +69,7 @@ $(document).ready(() => {
       });
   }
 
+  // Function that gets the current date, reformats it to the js-year-calendar format, and displays it on the page
   function getHeaderDate() {
     const currentHeaderDate = moment().format("MM/DD/YYYY");
     const month = (currentHeaderDate.slice(0, 2));
@@ -81,6 +89,7 @@ $(document).ready(() => {
   }
   getHeaderDate();
 
+  // Function that allows the dropdown for appetite to be chosen and redisplay the correct value when chosen
   $("body").on("click touchend", ".appetite-dropdown", function (event) {
     console.log(event.target);
     // #appetiteDropdownButton
