@@ -13,7 +13,7 @@ A journal, an affirmation generator, a wellness tracker, and a well-being resour
 [Github](https://github.com/mustafadag84)
 * Patrick Wells  
 [Github](https://github.com/black03mach)
-## Demonstration and GIF's 
+## Demonstration and GIF's - Heroku Link 
 
 ![demo](https://github.com/aholanda12/life-point/blob/master/public/img/closerdemogif.gif)
 
@@ -27,7 +27,7 @@ A journal, an affirmation generator, a wellness tracker, and a well-being resour
 
 ![demophonegif](https://github.com/aholanda12/life-point/blob/master/public/img/demophonegif.gif)
 
-
+![Heroku](https://life-point.herokuapp.com/)
 ## Table of Contents 
 * [Installation](#Installation)
 * [Usage](#Usage)
