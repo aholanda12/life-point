@@ -25,6 +25,8 @@ A journal, an affirmation generator, a wellness tracker, and a well-being resour
 
 ![Screen Shot 2020-09-18 at 3 20 06 PM](https://user-images.githubusercontent.com/64985702/93638732-d2e02580-f9c5-11ea-9d90-dc3b73dc5097.png)
 
+![demophonegif](https://github.com/aholanda12/life-point/blob/master/public/img/demophonegif.gif)
+
 
 To Be Added
 ## Table of Contents 
