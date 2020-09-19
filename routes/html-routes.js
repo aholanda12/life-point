@@ -46,7 +46,7 @@ module.exports = function (app) {
       const rando = (Math.floor(Math.random() * 101) + 1);
       const handlebarsObject = {
         userName: "Charlie",
-        affirmData: data[rando].dataValues.quote
+        affirmData: data[rando].quote
       };
       console.log("members");
       res.render("members", handlebarsObject);
