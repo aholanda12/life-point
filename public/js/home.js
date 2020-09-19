@@ -19,7 +19,7 @@ function getDate(data) {
   })
     .then(function (res) {
       console.log(res);
-      if (res === undefined || res.length == 0) {
+      if (res === undefined || res.length === 0) {
         console.log("Please redirect");
         window.location.href = "/members";
       } else {
