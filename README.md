@@ -35,8 +35,10 @@ To Be Added
 * [Tests](#Tests)
 * [Questions](#Questions)
 ## Information for use and installation
+
 ### Installation 
 Clone repo, install dependencies, and create a member account.
+
 ### Usage 
 Life Point is here to assist users in helping manage their mental health in a format inspired by bullet journaling. Each time users login and head to “Daily Entry” they are greeted with a positive daily affirmation. From here users can keep tabs on their mood, whether or not they took their medication, hours slept, minutes of exercise, minutes napping, caffeine and alcohol servings, hours spent on digital media, and minutes spent socializing. Along with a simple checklist of the basic activities such as showering, brushing teeth and self care. A checklist of ailments is listed as well along with an appetite meter for monitoring. 
  
@@ -46,11 +48,14 @@ Mental health resources are also provided if users feel they need additional sup
 
 ## License 
 MIT
+
 ### Contributing 
-n/a
+If users feel they can make a useful contribution to this application, please send an email. 
+
 ### Tests 
 To run, please install locally and type the following the command:
 node server.js
+
 ### Questions 
 If you have any questions about the repo, open an issue.
 You can also visit my [Github](https://github.com/aholanda12/life-point) 
