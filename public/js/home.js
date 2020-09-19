@@ -11,22 +11,27 @@ else {
 const currentDate = (newMonth + remainder);
 
 function getDate(data) {
+  const emptyArray = [];
   $.ajax({
     url: "/api/calendar",
     method: "GET",
     data: { data: data }
   })
     .then(function (res) {
-      for (let i = 0;i < res.length;i++) {
-        const dataDate = res[i].Journal.date;
-        console.log(dataDate);
-        if (dataDate === currentDate) {
-          const entryId = res[i].Journal.id;
-          callEntry(entryId);
+      if (res !== emptyArray) {
+        for (let i = 0;i < res.length;i++) {
+          const dataDate = res[i].Journal.date;
+          console.log(dataDate);
+          if (dataDate === currentDate) {
+            const entryId = res[i].Journal.id;
+            callEntry(entryId);
+          }
+          else {
+            window.location.href = "/members";
+          }
         }
-        else {
-          window.location.href = "/members";
-        }
+      } else {
+        window.location.href = "/members";
       }
     });
 }
