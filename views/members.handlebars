@@ -1,3 +1,4 @@
+{{!-- Nav bar --}}
 <nav class="navbar navbar-light" style="background-color: #e3f2fd">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,6 +18,8 @@
     </div>
   </div>
 </nav>
+
+{{!-- Mood section --}}
 <div class="container">
     <form id="allDataForm">
   <div class="row">
@@ -83,6 +86,8 @@
         </div>
       </div>
     </div>
+
+    {{!-- Habits section --}}
     <h2 class="Titles">
       Habits
     </h2>
@@ -166,6 +171,8 @@
         </div>
       </div>
     </div>
+
+    {{!-- Ailments section --}}
     <h2 class="Titles">
       Ailments
     </h2>
@@ -227,12 +234,16 @@
       </div>
     </div>
   </div>
+
+  {{!-- Affirmation section --}}
   <div class="columns col-md-4">
     <h2 class="affirmation">
       Today's Affirmation:
       <br>
       {{this.affirmData}}
     </h2>
+
+    {{!-- Grateful section --}}
     <div class="grateful titles">
       <h2>Grateful For:</h2>
       <div class="input-group mb-3">
@@ -271,6 +282,8 @@
           id="grateful5">
       </div>
     </div>
+
+    {{!-- Remember section --}}
     <h2 class="remember titles">
       Remember To:
     </h2>
@@ -310,6 +323,8 @@
         id="remember5">
     </div>
   </div>
+
+  {{!-- Journal section --}}
   <div class="columns col-md-4">
     <div class="form-group">
       <h2 for="exampleFormControlTextarea1">Journal Entry</h2>

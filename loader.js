@@ -10,11 +10,7 @@ db.sequelize.sync()
     return readFile("./db/affirmSeed.sql", "utf8");
   })
   .then(fileData => {
-    // console.log(fileData);
     fileData.split("\n").forEach(query => {
-      // db.sequelize.query(query, function(){
-      //   console.log("Ran: " + query);
-      // })
       db.Affirmation.create({
         quote: query.split("'")[1]
       }).then(data => {
