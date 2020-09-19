@@ -18,7 +18,11 @@ function getDate(data) {
     data: { data: data }
   })
     .then(function (res) {
-      if (res !== emptyArray) {
+      console.log(res);
+      if (res === undefined || res.length == 0) {
+        console.log("Please redirect");
+        window.location.href = "/members";
+      } else {
         for (let i = 0;i < res.length;i++) {
           const dataDate = res[i].Journal.date;
           console.log(dataDate);
@@ -30,8 +34,6 @@ function getDate(data) {
             window.location.href = "/members";
           }
         }
-      } else {
-        window.location.href = "/members";
       }
     });
 }
